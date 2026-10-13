@@ -1,0 +1,26 @@
+.Effects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+}
+
+.Effects .effect {
+  --accent: var(--neutral);
+
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+.Effects .effect .title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.Effects .effect .value {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}

@@ -1,0 +1,11 @@
+.Slider .title {
+  margin-bottom: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.Slider input {
+  width: 100%;
+  accent-color: var(--accent, var(--text));
+  cursor: pointer;
+}

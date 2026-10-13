@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tone JS</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="http://unpkg.com/tone"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="Button" id="startButton">Start</div>
+
+    <br />
+    <hr />
+    <br />
+
+    <div class="ToggleButtonSet" id="drumsSequencePresets">
+      <div class="title">Drums Presets</div>
+
+      <div>
+        <div class="ToggleButton active">Preset 1</div>
+        <div class="ToggleButton">Preset 2</div>
+      </div>
+    </div>
+
+    <div class="Slider">
+      <div class="title">Drums Channel Volume</div>
+      <input id="drumsChannelVolume" type="range" min="-80" max="24" step="1" />
+    </div>
+
+    <div class="ToggleButton" id="drumsChannelMute">Mute</div>
+
+    <br />
+    <hr />
+    <br />
+
+    <div class="Slider">
+      <div class="title">Bass Low Channel Volume</div>
+
+      <input
+        id="bassLowChannelVolume"
+        type="range"
+        min="-80"
+        max="24"
+        step="1"
+      />
+    </div>
+
+    <div class="ToggleButton" id="bassLowChannelMute">Mute</div>
+
+    <br />
+    <hr />
+    <br />
+
+    <div class="Slider">
+      <div class="title">Bass Mid Channel Volume</div>
+
+      <input
+        id="bassMidChannelVolume"
+        type="range"
+        min="-80"
+        max="24"
+        step="1"
+      />
+    </div>
+
+    <div class="ToggleButton" id="bassMidChannelMute">Mute</div>
+
+    <br />
+    <hr />
+    <br />
+
+    <div class="Slider">
+      <div class="title">Bass High Channel Volume</div>
+
+      <input
+        id="bassHighChannelVolume"
+        type="range"
+        min="-80"
+        max="24"
+        step="1"
+      />
+    </div>
+
+    <div class="ToggleButton" id="bassHighChannelMute">Mute</div>
+
+    <br />
+    <hr />
+    <br />
+
+    <div class="Slider">
+      <div class="title">High Voice Delay Wet</div>
+      <input id="highVoiceDelayWet" type="range" min="0" max="1" step="0.01" />
+    </div>
+
+    <br />
+
+    <div class="Slider">
+      <div class="title">High Voice Reverb Wet</div>
+      <input id="highVoiceReverbWet" type="range" min="0" max="1" step="0.01" />
+    </div>
+
+    <br />
+
+    <div class="Slider">
+      <div class="title">High Voice Channel Volume</div>
+
+      <input
+        id="highVoiceChannelVolume"
+        type="range"
+        min="-80"
+        max="24"
+        step="1"
+      />
+    </div>
+
+    <div class="ToggleButton" id="highVoiceChannelMute">Mute</div>
+
+    <br />
+
+    <div class="Button" id="highVoiceSequenceRandom">Randomize</div>
+  </body>
+</html>

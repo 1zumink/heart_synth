@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разум и Сердце</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+
+  <body class="index">
+    <header class="topBar">
+      <div class="title">
+        <span class="mind">Разум</span>
+        <span class="and">и</span>
+        <span class="heart">Сердце</span>
+      </div>
+
+      <div class="beatControls">
+        <div class="ToggleButton beatToggle" id="beatToggle">Стоп</div>
+
+        <div class="ToggleButtonSet" id="beatPresets"></div>
+
+        <div class="Slider tempo">
+          <div class="title">Темп <span id="beatTempoValue"></span> BPM</div>
+          <input id="beatTempo" type="range" step="1" />
+        </div>
+
+        <div class="Slider beatVolume">
+          <div class="title">Бит <span id="beatVolumeValue"></span> дБ</div>
+          <input id="beatVolume" type="range" step="1" />
+        </div>
+      </div>
+
+      <div class="hint">
+        В начале всё выключено: голоса — «Вкл», бит — «Играть» или Enter,
+        эмоции — клик или клавиши A–J · кружок — нота вкл/выкл · бегунок —
+        громкость ноты
+      </div>
+    </header>
+
+    <main class="sequencer">
+      <section class="voice mind" id="mindSequencer"></section>
+      <section class="voice heart" id="heartSequencer"></section>
+    </main>
+
+    <section class="block">
+      <div class="sectionTitle">Эффекты</div>
+      <div class="Effects" id="effects"></div>
+    </section>
+
+    <section class="block">
+      <div class="sectionTitle">Эмоции</div>
+      <div class="Pads" id="pads"></div>
+    </section>
+  </body>
+</html>

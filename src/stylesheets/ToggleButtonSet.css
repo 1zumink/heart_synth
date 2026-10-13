@@ -1,0 +1,8 @@
+.ToggleButtonSet {
+  display: flex;
+  gap: 4px;
+}
+
+.ToggleButtonSet .ToggleButton {
+  flex: none;
+}

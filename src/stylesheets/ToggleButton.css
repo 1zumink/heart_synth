@@ -1,0 +1,21 @@
+.ToggleButton {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.ToggleButton:hover {
+  color: var(--text);
+}
+
+.ToggleButton.active {
+  border-color: var(--text);
+  background-color: var(--text);
+  color: var(--background);
+}

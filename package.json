@@ -1,0 +1,11 @@
+{
+  "name": "heart-synth",
+  "scripts": {
+    "dev": "bun bun.config.dev.js",
+    "clean": "rm -rf dist",
+    "build": "bun run clean && bun run bun.config.prod.js"
+  },
+  "dependencies": {
+    "tone": "^15.1.22"
+  }
+}

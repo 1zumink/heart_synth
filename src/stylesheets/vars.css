@@ -1,0 +1,20 @@
+:root {
+  --background: #0f0e12;
+  --surface: #18171d;
+  --surface-raised: #222129;
+  --border: #2e2d36;
+  --text: #ece9f1;
+  --text-muted: #8c8898;
+
+  --heart: #ff4d5e;
+  --heart-soft: rgb(255 77 94 / 0.16);
+  --mind: #5aa9ff;
+  --mind-soft: rgb(90 169 255 / 0.16);
+  --neutral: #b9b4c4;
+  --neutral-soft: rgb(185 180 196 / 0.14);
+
+  --radius: 10px;
+  --gap: 16px;
+  --font: 'PT Root UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif;
+}

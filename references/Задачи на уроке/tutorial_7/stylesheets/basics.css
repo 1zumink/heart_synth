@@ -1,0 +1,54 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --dark-grey: #262626;
+  --medium-grey: #8d8d8d;
+  --grey: #c5c5c5;
+  --light-grey: #cfcfcf;
+  --dark-green: #00ff29;
+  --acid-green: #79ff39;
+  --background-grey: #2d2d2d;
+  --background-dark-grey: #232323;
+  --text-grey: #e1e1e1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Root UI', Helvetica, Arial, sans-serif;
+  background-color: var(--medium-grey);
+  color: var(--dark-grey);
+
+  &.started {
+    .fullScreenFader {
+      display: none;
+    }
+
+    .synth {
+      display: block;
+    }
+  }
+
+  .synth {
+    display: none;
+  }
+}
+
+.fullScreenFader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+}
+
+.synth {
+  padding: 20px;
+}
+
+.Slider {
+  width: 500px !important;
+}
