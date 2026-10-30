@@ -1,59 +1,9 @@
-/* ВЕРХНЯЯ ПАНЕЛЬ: название и бит */
+/* ПОДСКАЗКА над секвенсором */
 
-.topBar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 24px;
+body > .hint {
   max-width: 1200px;
-  margin: 0 auto 24px;
-}
-
-.topBar > .title {
-  display: flex;
-  gap: 8px;
-  font-size: clamp(22px, 4vw, 32px);
-  font-weight: 700;
-}
-
-.topBar > .title .mind {
-  color: var(--mind);
-}
-
-.topBar > .title .heart {
-  color: var(--heart);
-}
-
-.topBar > .title .and {
-  font-weight: 300;
-  color: var(--text-muted);
-}
-
-.beatControls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 16px;
-  margin-left: auto;
-}
-
-.beatToggle {
-  flex: none;
-  min-width: 72px;
-}
-
-.beatControls .tempo {
-  width: 180px;
-}
-
-.beatControls .beatVolume {
-  width: 120px;
-}
-
-.topBar > .hint {
-  flex-basis: 100%;
+  margin: 0 auto 16px;
   font-size: 11px;
-  text-align: right;
   color: var(--text-muted);
 }
 
@@ -64,17 +14,19 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--gap);
   max-width: 1200px;
-  margin: 0 auto 24px;
+  margin: 0 auto 32px;
 }
 
 .voice {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 16px;
+  padding: 18px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background-color: rgb(24 23 29 / 0.7);
+  background-color: var(--surface);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .voice.mind {
@@ -87,26 +39,33 @@
 
 .block {
   max-width: 1200px;
-  margin: 0 auto 24px;
+  margin: 0 auto 32px;
+}
+
+/* БИТ: три карточки — запуск с пресетами, темп, громкость */
+
+.beatCards {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 8px;
+}
+
+.beatCard.transport {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
 }
 
 @media (max-width: 860px) {
-  .sequencer {
+  .sequencer,
+  .beatCards {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .beatControls {
-    margin-left: 0;
-  }
-
-  .beatControls .tempo,
-  .beatControls .beatVolume {
-    width: 100%;
-  }
-
-  .topBar > .hint {
-    text-align: left;
+  .beatCard .ToggleButtonSet {
+    flex-wrap: wrap;
   }
 }

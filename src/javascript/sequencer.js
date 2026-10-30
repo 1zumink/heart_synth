@@ -1,5 +1,5 @@
 import * as Tone from 'tone'
-import { createSlider, createToggle, createButton } from './ui/controls.js'
+import { createSlider, createPlayToggle, createButton } from './ui/controls.js'
 import { mind, playMind } from './instruments/mind.js'
 import { heart, playHeart } from './instruments/heart.js'
 
@@ -163,7 +163,7 @@ function createVoiceHead(voice, container, renderAll) {
   const controls = head.querySelector('.controls')
 
   controls.appendChild(
-    createToggle('Вкл', !channel.mute, (active) => {
+    createPlayToggle('голос', !channel.mute, (active) => {
       channel.node.mute = !active
       if (active) channel.node.volume.value = channel.volume
       // выключенный голос приглушён и на экране

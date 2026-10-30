@@ -1,7 +1,16 @@
 .Slider .title {
   margin-bottom: 4px;
+  white-space: nowrap;
   font-size: 11px;
   color: var(--text-muted);
+}
+
+.Slider .value {
+  font-family: var(--font-dot);
+  font-weight: 700;
+  font-size: 1.2em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
 }
 
 .Slider input {

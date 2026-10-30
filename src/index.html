@@ -4,40 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Разум и Сердце</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Doto:wght@700;900&family=DotGothic16&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
     <link rel="stylesheet" href="./index.css" />
     <script type="module" src="./index.js"></script>
   </head>
 
   <body class="index">
-    <header class="topBar">
-      <div class="title">
-        <span class="mind">Разум</span>
-        <span class="and">и</span>
-        <span class="heart">Сердце</span>
-      </div>
+    <!-- фон: разум слева, сердце справа -->
+    <div class="backdrop" aria-hidden="true">
+      <img class="art mind" src="./images/mind.svg" alt="" />
+      <img class="art heart" src="./images/heart.svg" alt="" />
+    </div>
 
-      <div class="beatControls">
-        <div class="ToggleButton beatToggle" id="beatToggle">Стоп</div>
-
-        <div class="ToggleButtonSet" id="beatPresets"></div>
-
-        <div class="Slider tempo">
-          <div class="title">Темп <span id="beatTempoValue"></span> BPM</div>
-          <input id="beatTempo" type="range" step="1" />
-        </div>
-
-        <div class="Slider beatVolume">
-          <div class="title">Бит <span id="beatVolumeValue"></span> дБ</div>
-          <input id="beatVolume" type="range" step="1" />
-        </div>
-      </div>
-
-      <div class="hint">
-        В начале всё выключено: голоса — «Вкл», бит — «Играть» или Enter,
-        эмоции — клик или клавиши A–J · кружок — нота вкл/выкл · бегунок —
-        громкость ноты
-      </div>
-    </header>
+    <div class="hint">
+      В начале всё выключено: голоса и бит — кнопка ▶ (бит ещё Enter), эмоции —
+      клик или клавиши A–J · кружок — нота вкл/выкл · бегунок — громкость ноты
+    </div>
 
     <main class="sequencer">
       <section class="voice mind" id="mindSequencer"></section>
@@ -52,6 +39,32 @@
     <section class="block">
       <div class="sectionTitle">Эмоции</div>
       <div class="Pads" id="pads"></div>
+    </section>
+
+    <section class="block">
+      <div class="sectionTitle">Бит</div>
+      <div class="beatCards">
+        <div class="beatCard transport">
+          <div class="ToggleButton PlayButton beatToggle" id="beatToggle" role="button"></div>
+          <div class="ToggleButtonSet" id="beatPresets"></div>
+        </div>
+
+        <div class="beatCard Slider tempo">
+          <div class="title">
+            Темп
+            <span class="value"><span id="beatTempoValue"></span> BPM</span>
+          </div>
+          <input id="beatTempo" type="range" step="1" />
+        </div>
+
+        <div class="beatCard Slider beatVolume">
+          <div class="title">
+            Бит
+            <span class="value"><span id="beatVolumeValue"></span> дБ</span>
+          </div>
+          <input id="beatVolume" type="range" step="1" />
+        </div>
+      </div>
     </section>
   </body>
 </html>

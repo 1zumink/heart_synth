@@ -1,9 +1,11 @@
 .Button {
   width: fit-content;
   padding: 12px 28px;
-  font-size: 16px;
+  font-size: 14px;
+  letter-spacing: 0.04em;
   text-align: center;
-  border-radius: 999px;
+  text-transform: uppercase;
+  border-radius: var(--radius-small);
   background-color: var(--text);
   color: var(--background);
   cursor: pointer;
@@ -12,7 +14,7 @@
 }
 
 .Button:hover {
-  filter: brightness(90%);
+  filter: brightness(140%);
 }
 
 .Button:active {

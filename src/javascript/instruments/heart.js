@@ -38,7 +38,7 @@ export const heart = {
   channel: {
     volume: -3,
     pan: 0.3,
-    // в начале голос выключен — включается кнопкой «Вкл»
+    // в начале голос выключен — включается кнопкой ▶
     mute: true,
     solo: false,
     node: null

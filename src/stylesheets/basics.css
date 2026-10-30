@@ -3,32 +3,74 @@ body {
   --mindGlow: 0;
 
   min-height: 100vh;
-  padding: 20px 16px 40px;
+  padding: 24px 16px 48px;
   font-family: var(--font);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
   color: var(--text);
   background-color: var(--background);
-  background-image:
-    radial-gradient(
-      ellipse 60% 70% at 0% 30%,
-      rgb(90 169 255 / calc(0.04 + var(--mindGlow) * 0.22)),
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 60% 70% at 100% 30%,
-      rgb(255 77 94 / calc(0.04 + var(--heartGlow) * 0.22)),
-      transparent 70%
-    );
-  background-attachment: fixed;
   user-select: none;
   -webkit-user-select: none;
 }
 
+/* ФОН: разум слева, сердце справа; ярче, когда голос звучит */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.backdrop .art {
+  position: absolute;
+  top: 50%;
+  width: 52vw;
+  max-height: 90vh;
+  object-fit: contain;
+  transition: opacity 120ms linear;
+}
+
+.backdrop .art.mind {
+  left: -6vw;
+  transform: translateY(-50%);
+  opacity: calc(0.3 + var(--mindGlow) * 0.6);
+}
+
+.backdrop .art.heart {
+  right: -4vw;
+  width: 44vw;
+  transform: translateY(-50%);
+  opacity: calc(0.3 + var(--heartGlow) * 0.6);
+}
+
 .sectionTitle {
   margin-bottom: 10px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-family: var(--font-dot);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text);
+}
+
+@media (max-width: 860px) {
+  .backdrop .art.mind {
+    top: 22%;
+    width: 80vw;
+  }
+
+  .backdrop .art.heart {
+    top: 72%;
+    width: 70vw;
+  }
+
+  .backdrop .art.mind {
+    opacity: calc(0.14 + var(--mindGlow) * 0.5);
+  }
+
+  .backdrop .art.heart {
+    opacity: calc(0.14 + var(--heartGlow) * 0.5);
+  }
 }

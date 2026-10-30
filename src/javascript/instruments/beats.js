@@ -1,6 +1,7 @@
 import * as Tone from 'tone'
 import { patternToEvents } from '../utilities.js'
 import { mixer } from '../mixer.js'
+import { playIcon } from '../ui/controls.js'
 import closedHatUrl from '../../samples/HHCD2.WAV'
 import openHatUrl from '../../samples/HHOD4.WAV'
 import rimUrl from '../../samples/RIM127.WAV'
@@ -95,7 +96,7 @@ export const mindBeats = {
 }
 
 export const beats = {
-  // в начале всё выключено — бит включается кнопкой «Играть» или Enter
+  // в начале всё выключено — бит включается кнопкой ▶ или Enter
   playing: false,
   presetIndex: 0,
   bpm: {
@@ -215,14 +216,19 @@ function setPlaying(playing) {
 export function initBeatsUI() {
   const toggleButton = document.getElementById('beatToggle')
 
-  function toggle() {
-    setPlaying(!beats.playing)
-    toggleButton.innerText = beats.playing ? 'Стоп' : 'Играть'
+  function render() {
+    toggleButton.innerHTML = playIcon(beats.playing)
+    toggleButton.title = beats.playing ? 'Стоп' : 'Играть'
+    toggleButton.setAttribute('aria-label', toggleButton.title)
     toggleButton.classList.toggle('active', beats.playing)
   }
 
-  toggleButton.innerText = beats.playing ? 'Стоп' : 'Играть'
-  toggleButton.classList.toggle('active', beats.playing)
+  function toggle() {
+    setPlaying(!beats.playing)
+    render()
+  }
+
+  render()
   toggleButton.addEventListener('click', toggle)
 
   document.addEventListener('keydown', (e) => {

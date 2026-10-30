@@ -4,23 +4,37 @@
   gap: 8px;
 }
 
-.Effects .effect {
+/* карточки эффектов и бита выглядят одинаково */
+.Effects .effect,
+.beatCard {
   --accent: var(--neutral);
 
   padding: 12px 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background-color: var(--surface);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
-.Effects .effect .title {
+.Effects .effect .title,
+.beatCard .title {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  align-items: baseline;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text);
 }
 
-.Effects .effect .value {
+.Effects .effect .value,
+.beatCard .value {
+  /* единицы как есть: «дБ», а не «ДБ» */
+  text-transform: none;
+  font-family: var(--font-dot);
+  font-size: 18px;
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--text-muted);
+  color: var(--text);
 }

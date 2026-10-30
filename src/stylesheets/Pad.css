@@ -1,6 +1,6 @@
 .Pads {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 8px;
 }
 
@@ -16,8 +16,11 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background-color: var(--surface);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   cursor: pointer;
   touch-action: none;
+  container-type: inline-size;
   transition:
     background-color 120ms ease,
     border-color 120ms ease,
@@ -39,13 +42,17 @@
   padding: 1px 7px;
   font-size: 11px;
   border: 1px solid var(--accent);
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   color: var(--accent);
 }
 
-.Pad .title {
-  font-size: 16px;
-  font-weight: 600;
+.Pad > .title {
+  font-family: var(--font-dot);
+  /* одной строкой: в узкой карточке шрифт мельчает, чтобы слово влезло */
+  font-size: min(15px, 8cqi);
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .Pad .hint {
@@ -60,7 +67,7 @@
 .Pad.active {
   background-color: var(--accent-soft);
   border-color: var(--accent);
-  box-shadow: 0 0 24px var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 28px var(--accent-soft);
 }
 
 .Pad:active {
@@ -79,11 +86,17 @@
 
 .Pad .controls .Slider .title {
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
+  gap: 6px;
   margin-bottom: 0;
+  overflow: hidden;
   font-size: 10px;
 }
 
+/* значение всегда целиком; при нехватке места обрезается подпись */
 .Pad .controls .Slider .value {
-  font-variant-numeric: tabular-nums;
+  flex: none;
+  font-size: 12px;
+  white-space: nowrap;
 }
